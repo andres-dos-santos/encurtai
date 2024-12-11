@@ -15,12 +15,15 @@ export function Create() {
 
     if (url) {
       if (process.env.NEXT_PUBLIC_BASE_URL) {
-        const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL, {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          next: { tags: ['create'] },
-          body: JSON.stringify({ url: url.toString() }),
-        })
+        const response = await fetch(
+          process.env.NEXT_PUBLIC_BASE_URL + 'url/',
+          {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            next: { tags: ['create'] },
+            body: JSON.stringify({ url: url.toString() }),
+          },
+        )
 
         if (response.ok) {
           const { shortUrl } = await response.json()
@@ -28,7 +31,7 @@ export function Create() {
           await revalidate('create') // acho que tem que invalidar o outro
 
           await navigator.clipboard.writeText(
-            'https://lkei.vercel.app/api/url/' + shortUrl,
+            'https://lkei.vercel.app/api/' + shortUrl,
           )
 
           toast('✅ Link criado!')
