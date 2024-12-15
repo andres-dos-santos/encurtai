@@ -1,6 +1,5 @@
-import { vi, test } from 'vitest'
-import { render, renderHook, screen } from '@testing-library/react'
-import { useTheme } from 'next-themes'
+import { test } from 'vitest'
+import { render } from '@testing-library/react'
 
 import { Theme } from './theme'
 

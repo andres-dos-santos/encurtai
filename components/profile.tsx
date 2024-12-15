@@ -18,7 +18,10 @@ export function Profile() {
   return !isSignedIn ? (
     <SignInButton>
       <div className="ml-3 mt-4 mb-2.5 flex items-center">
-        <p className="cursor-pointer text-[13px] font-medium text-zinc-600 -tracking-wide mt-2.5 dark:text-zinc-300">
+        <p
+          data-testid="p-has-no-account"
+          className="cursor-pointer text-[13px] font-medium text-zinc-600 -tracking-wide mt-2.5 dark:text-zinc-300"
+        >
           Ainda não tem conta?{' '}
           <span className="text-blue-500 underline">Clique aqui</span>.
         </p>
