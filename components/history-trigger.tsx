@@ -8,7 +8,7 @@ export function HistoryTrigger() {
 
   return (
     isSignedIn && (
-      <SheetTrigger>
+      <SheetTrigger data-testid="history-trigger-btn">
         <p className="font-medium -tracking-wider text-[13px]">Seu histórico</p>
       </SheetTrigger>
     )

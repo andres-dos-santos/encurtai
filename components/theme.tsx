@@ -7,7 +7,10 @@ export function Theme() {
   const { setTheme, theme } = useTheme()
 
   return (
-    <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+    <button
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      data-testid="change-theme-btn"
+    >
       {theme === 'dark' ? (
         <Sun className="size-4" />
       ) : (
